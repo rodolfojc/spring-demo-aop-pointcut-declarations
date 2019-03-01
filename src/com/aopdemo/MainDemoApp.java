@@ -18,6 +18,13 @@ public class MainDemoApp {
 		//GET THE BEAN MEMBERSHIP FROM SPRING CONTAINER
 		MembershipDAO theMemberDAO = context.getBean("membershipDAO", MembershipDAO.class);
 		
+		//CALL SETTER AND GETTERS
+		theAccountDAO.setName("Rodolfo");
+		theAccountDAO.setServiceCode("Gold");
+
+		String name = theAccountDAO.getName();
+		String code = theAccountDAO.getServiceCode();
+		
 		//CALL METHODS
 		Account myAccount = new Account();
 		theAccountDAO.addAccount(myAccount, true);
